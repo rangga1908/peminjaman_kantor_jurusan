@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD Interface</title>
+    <link rel="stylesheet" href="../KantorRpl.css" />
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f3f7fa;
+        padding: 20px;
+      }
+
+      h3 {
+        color: black;
+      }
+
+      nav {
+        padding: 10px;
+      }
+
+      fieldset {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #ffffff;
+      }
+
+      legend {
+        font-size: 1.5em;
+        color: #242424;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      input[type="number"] {
+        width: calc(100% - 20px);
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-bottom: 10px;
+      }
+
+      button {
+        background-color: #242424;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #333;
+      }
+
+      table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: center;
+      }
+
+      fieldset {
+        text-align: center;
+      }
+
+      th {
+        background-color: #242424;
+        color: yellow;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      #strukContainer {
+        display: none;
+        margin-top: 20px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      pre {
+        white-space: pre-wrap;
+        font-size: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html">About</a></li>
+      <li><a href="../index.html">Daftar Barang</a></li>
+      <li><a href="DaftarPeminjam.html">Formulir Peminjam</a></li>
+      <li><a href="KS.html">Kritik Saran</a></li>
+    </nav>
+    <br /><br /><br />
+    <fieldset>
+      <legend>Data Peminjam</legend>
+
+      <!-- Form Input -->
+      <div class="form-group">
+        <label for="name">Nama:</label>
+        <input type="text" id="name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" required />
+      </div>
+      <div class="form-group">
+        <label for="alamat">Jenis Barang:</label>
+        <input type="text" id="alamat" required />
+      </div>
+      <div class="form-group">
+        <label for="nomor">Nomor HP:</label>
+        <input type="number" id="nomor" required />
+      </div>
+      <button onclick="addData()">Simpan</button>
+
+      <!-- Tabel Data -->
+      <h3>Data Pengguna</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Jenis Barang</th>
+            <th>Nomor HP</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+
+      <!-- Struk -->
+      <div id="strukContainer">
+        <pre id="strukContent"></pre>
+        <button onclick="hideStruk()">Tutup</button>
+        <button onclick="printContent('strukContent')">Cetak</button>
+      </div>
+    </fieldset>
+
+    <script src="Daftar.js"></script>
+  </body>
+</html>

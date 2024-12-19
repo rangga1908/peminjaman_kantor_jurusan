@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Struk Peminjaman Barang</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f3f7fa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .struk-container {
+        width: 90%;
+        max-width: 500px;
+        background: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #242424;
+      }
+
+      p {
+        margin: 10px 0;
+        font-size: 1em;
+        color: #333;
+      }
+
+      button {
+        background-color: #242424;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: block;
+        margin: 20px auto;
+        font-size: 1em;
+      }
+
+      button:hover {
+        background-color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="struk-container">
+      <h2>Struk Peminjaman Barang</h2>
+      <p><strong>Nama:</strong> <span id="name"></span></p>
+      <p><strong>Email:</strong> <span id="email"></span></p>
+      <p><strong>Password:</strong> <span id="password"></span></p>
+      <p><strong>Barang:</strong> <span id="alamat"></span></p>
+      <p><strong>No HP:</strong> <span id="nomor"></span></p>
+      <button onclick="window.print()">Cetak Struk</button>
+    </div>
+
+    <script>
+      // Ambil data dari URL
+      const urlParams = new URLSearchParams(window.location.search);
+
+      document.getElementById("name").textContent = urlParams.get("name");
+      document.getElementById("email").textContent = urlParams.get("email");
+      document.getElementById("password").textContent =
+        urlParams.get("password");
+      document.getElementById("alamat").textContent = urlParams.get("alamat");
+      document.getElementById("nomor").textContent = urlParams.get("nomor");
+    </script>
+  </body>
+</html>
